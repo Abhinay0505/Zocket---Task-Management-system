@@ -1,0 +1,67 @@
+Task-management-system/
+├── BACKEND/
+│   ├── config/
+│   │   ├── config.go          # Configuration settings (e.g., environment variables, ports)
+│   │   └── db.go              # Database connection (PostgreSQL or MongoDB)
+│   ├── handlers/              # REST API handlers
+│   │   ├── auth.go            # User authentication endpoints (login, register, etc.)
+│   │   └── task.go            # Task management endpoints (create, update, delete, list)
+│   ├── middleware/            # Middleware for authentication and real-time features
+│   │   ├── auth.go            # JWT middleware for authentication
+│   │   └── websocket.go       # WebSocket middleware for real-time updates
+│   ├── models/                # Data models/structs
+│   │   ├── task.go            # Task model (e.g., ID, title, description, userID, status)
+│   │   └── user.go            # User model (e.g., ID, email, password hash)
+│   ├── utils/                 # Utility functions
+│   │   ├── ai.go              # AI integration (e.g., OpenAI/Gemini API for task suggestions)
+│   │   └── jwt.go             # JWT token generation and validation
+│   ├── go.mod                 # Go module file (dependencies)
+│   ├── go.sum                 # Go module checksums
+│   └── main.go                # Entry point (server setup, routes, WebSocket initialization)
+├── README.md                  # Project documentation
+
+
+
+
+
+Task-management-system/
+├── FRONTEND/                  # Or at root if combined with backend
+│   ├── app/                   # Next.js App Router (preferred)
+│   │   ├── layout.tsx         # Global layout (e.g., navigation, Tailwind CSS)
+│   │   ├── page.tsx           # Home page (task dashboard)
+│   │   ├── tasks/             # Task-related pages
+│   │   │   ├── page.tsx       # Task list/dashboards
+│   │   │   ├── [id]/          # Dynamic route for individual tasks
+│   │   │   │   └── page.tsx   # Task details
+│   │   ├── auth/              # Authentication pages
+│   │   │   ├── login/         # Login page
+│   │   │   │   └── page.tsx   # Login form
+│   │   │   └── register/      # Register page
+│   │   │       └── page.tsx   # Register form
+│   │   └── ai-chat/           # AI-powered chat for task recommendations
+│   │       └── page.tsx       # Chat interface
+│   ├── components/            # Reusable UI components
+│   │   ├── TaskCard.tsx       # Task display component
+│   │   ├── Navbar.tsx         # Navigation bar
+│   │   ├── ChatBot.tsx        # AI chat component
+│   │   └── AuthForm.tsx       # Authentication form component
+│   ├── lib/                   # Utility functions and API clients
+│   │   ├── api.ts             # API client for backend (REST/WebSocket)
+│   │   ├── auth.ts            # JWT authentication utilities
+│   │   └── websocket.ts       # WebSocket client for real-time updates
+│   ├── public/                # Static assets (images, favicon, etc.)
+│   │   └── favicon.ico
+│   ├── styles/                # Tailwind CSS and custom styles
+│   │   ├── globals.css        # Global styles (Tailwind base)
+│   │   └── tailwind.config.js # Tailwind configuration
+│   ├── types/                 # TypeScript type definitions
+│   │   ├── task.ts            # Task type definitions
+│   │   └── user.ts            # User type definitions
+│   ├── .env.local             # Environment variables (ignored by Git)
+│   ├── next.config.js         # Next.js configuration
+│   ├── package.json           # Project dependencies and scripts
+│   ├── tsconfig.json          # TypeScript configuration
+│   └── README.md              # Frontend-specific documentation (optional)
+├── BACKEND/                   # Backend as described above
+├── README.md                  # Root README (project-wide)
+└── .gitignore                 # Ignore files (e.g., node_modules/, .env.local)
